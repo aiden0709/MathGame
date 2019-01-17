@@ -76,6 +76,10 @@
             console.log("Make subtraction problem");
             newSubtractionProblem(level);
             break;
+            case 'Multiplication':
+              console.log("Make multiplication problem");
+              newMultiplicationProblem(level);
+              break;
           default:
             alert("Unknown problem type "+type);
         }
@@ -126,6 +130,45 @@
         $( "#question").html(question);
         console.log("New question = "+question+ " of level = "+level);
         ANSWER=p1+p2;
+          console.log ( ANSWER )
+      }
+
+      function newMultiplicationProblem(level) {
+        let min=0;
+        let max=0;
+        switch (level) {
+          case '1':
+            //These are very easy multiplication problems
+            min = 1;
+            max = 6;
+            break;
+          case '2':
+            //Easy
+            min = 2;
+            max = 10;
+            break;
+          case '3':
+            //Medium
+            min = 2;
+            max = 12;
+            break;
+          case '4':
+            //Hard
+            min = 2;
+            max = 20;
+            break;
+          default:
+            //Very Hard
+            min = 2;
+            max = 50;
+        }
+        let p1=getRndInteger(min, max);
+        let p2=getRndInteger(min, max);
+        let question = p1+" * "+p2;
+        $( "#question").html(question);
+        console.log("New question = "+question+ " of level = "+level);
+        ANSWER=p1*p2;
+          console.log ( ANSWER )
       }
 
       function newSubtractionProblem(level) {
@@ -186,6 +229,7 @@
         $( "#question").html(question);
         console.log("New question = "+question+ " of level = "+level);
         ANSWER=p1-p2;
+        console.log ( ANSWER )
       }
 
 
