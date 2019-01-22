@@ -68,18 +68,27 @@
         type = $( "#type" ).val();
         level = $( "#level").val();
         switch(type) {
+
           case 'Addition':
             console.log("Make an addition problem");
             newAdditionProblem(level);
             break;
+
           case 'Subtraction':
             console.log("Make subtraction problem");
             newSubtractionProblem(level);
             break;
-            case 'Multiplication':
+
+          case 'Multiplication':
               console.log("Make multiplication problem");
               newMultiplicationProblem(level);
               break;
+
+          case 'Division':
+              console.log("Make division problem");
+              newDivisionProblem(level);
+              break;
+
           default:
             alert("Unknown problem type "+type);
         }
@@ -171,6 +180,7 @@
           console.log ( ANSWER )
       }
 
+
       function newSubtractionProblem(level) {
         let min=0;
         let max=0;
@@ -231,6 +241,46 @@
         ANSWER=p1-p2;
         console.log ( ANSWER )
       }
+
+      function newDivisionProblem(level) {
+        let min=0;
+        let max=0;
+        switch (level) {
+          case '1':
+            //These are very easy multiplication problems
+            min = 1;
+            max = 6;
+
+            break;
+          case '2':
+            //Easy
+            min = 2;
+            max = 10;
+            break;
+          case '3':
+            //Medium
+            min = 2;
+            max = 12;
+            break;
+          case '4':
+            //Hard
+            min = 2;
+            max = 20;
+            break;
+          default:
+            //Very Hard
+            min = 2;
+            max = 50;
+        }
+        let p1= getRndInteger(min, max);
+        ANSWER = getRndInteger(min, max);
+        let p2 = p1 * ANSWER
+        let question = p1+" / "+p2;
+        $( "#question").html(question);
+        console.log("New question = "+question+ " of level = "+level);
+          console.log ( ANSWER )
+      }  ANSWER=p1/p2;p
+
 
 
       /*
