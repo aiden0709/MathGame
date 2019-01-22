@@ -32,6 +32,9 @@
             <option>Subtraction</option>
             <option>Multiplication</option>
             <option>Division</option>
+            <option>Squaring</option>
+            <option>Cubing</option>
+
           </select>
         </div>
         <div class="d-flex p-2">
@@ -89,6 +92,16 @@
               newDivisionProblem(level);
               break;
 
+         case 'Squaring':
+             console.log("Make an addition problem");
+             newSquaringProblem(level);
+             break;
+
+             case 'Cubing':
+                 console.log("Make an addition problem");
+                 newCubingProblem(level);
+                 break;
+
           default:
             alert("Unknown problem type "+type);
         }
@@ -110,7 +123,7 @@
         switch (level) {
           case '1':
             //These are very easy multiplication problems
-            min = 1;
+            min = 2;
             max = 6;
             break;
           case '2':
@@ -275,11 +288,89 @@
         let p1= getRndInteger(min, max);
         ANSWER = getRndInteger(min, max);
         let p2 = p1 * ANSWER
-        let question = p1+" / "+p2;
+        let question = p1+" &#247 "+p2;
         $( "#question").html(question);
         console.log("New question = "+question+ " of level = "+level);
           console.log ( ANSWER )
-      }  ANSWER=p1/p2;p
+          ANSWER=p1/p2;p
+      }
+
+      function newSquaringProblem(level) {
+        let min=0;
+        let max=0;
+        switch (level) {
+          case '1':
+            //These are very easy multiplication problems
+            min = 1;
+            max = 6;
+            break;
+          case '2':
+            //Easy
+            min = 2;
+            max = 10;
+            break;
+          case '3':
+            //Medium
+            min = 2;
+            max = 12;
+            break;
+          case '4':
+            //Hard
+            min = 2;
+            max = 20;
+            break;
+          default:
+            //Very Hard
+            min = 2;
+            max = 50;
+        }
+        let p1=getRndInteger(min, max);
+        let question = p1+" Squared ";
+        $( "#question").html(question);
+        console.log("New question = "+question+ " of level = "+level);
+         ANSWER=p1*p1;
+          console.log ( ANSWER )
+      }
+
+      function newCubingProblem(level) {
+        let min=0;
+        let max=0;
+        switch (level) {
+          case '1':
+            //These are very easy multiplication problems
+            min = 1;
+            max = 6;
+            break;
+          case '2':
+            //Easy
+            min = 2;
+            max = 10;
+            break;
+          case '3':
+            //Medium
+            min = 2;
+            max = 12;
+            break;
+          case '4':
+            //Hard
+            min = 2;
+            max = 20;
+            break;
+          default:
+            //Very Hard
+            min = 2;
+            max = 50;
+        }
+        let p1=getRndInteger(min, max);
+        let question = p1+" Cubed ";
+        $( "#question").html(question);
+        console.log("New question = "+question+ " of level = "+level);
+         ANSWER=p1*p1*p1;
+          console.log ( ANSWER )
+      }
+
+
+
 
 
 
