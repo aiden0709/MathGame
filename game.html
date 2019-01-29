@@ -42,8 +42,10 @@
           <select class="custom-select mr-sm-2" id="theme" onchange="newtheme();" >
             <option> Light </option>
             <option> Dark </option>
+            <option> Purple </option>
             <option> Green </option>
             <option> Powderblue </option>
+              <option> Darkblue </option>
             <option> Crimson </option>
           </select>
         </div>
@@ -99,10 +101,21 @@
          document.body.style.color = 'black' ;
          break;
 
+         case 'Darkblue':
+          document.body.style.backgroundColor = 'DarkBlue';
+          document.body.style.color = 'white ' ;
+          break;
+
          case 'Crimson':
           document.body.style.backgroundColor = 'Crimson';
           document.body.style.color = 'white ' ;
           break;
+
+          case 'Purple':
+           document.body.style.backgroundColor = 'DarkViolet';
+           document.body.style.color = 'white' ;
+           break;
+
   }
 }
 
